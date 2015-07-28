@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
+import java.util.Map;
 
 @Controller
 @RequestPath(path = "/home/v1/*")
@@ -36,7 +37,10 @@ public class RestController {
         Map<String, String> queryParams = WebContext.getQueryParams();
         System.out.println("Query parameters: " + queryParams);
 
-        // Alternative way of writing a response
-        WebContext.writeResponseAsXml(adapter);
+        // Alternative way of writing a response as XML
+        // WebContext.writeResponseAsXml(adapter);
+
+        // Writing response as JSON
+        WebContext.writeResponseAsJson(adapter);
     }
 }

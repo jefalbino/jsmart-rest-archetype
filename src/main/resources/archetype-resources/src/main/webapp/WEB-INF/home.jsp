@@ -13,7 +13,7 @@
     <body class="container">
 
         <!-- Example of REST request sent via rest component to RequestPath mapped on server -->
-        <div class="col-md-6" style="float: none; margin-top: 50px;">
+        <div class="col-md-6" style="float: none; margin: auto; margin-top: 50px;">
 
             <!--
                 The rest component is used to facilitate the process of sending input data
@@ -42,7 +42,7 @@
                     Here is where the REST request will be triggered, the button attributes to register
                     callbacks for AJAX request phases
                 -->
-                <sm:button id="rest-btn" ajax="true" label="Rest Request" onSuccess="requestOk">
+                <sm:button id="rest-btn" ajax="true" label="Rest Request" onSuccess="requestOk" style="float: right;">
 
                     <!-- This parameters will be sent as query parameters -->
                     <sm:param name="paramOne" value="valueOne" />
@@ -50,14 +50,15 @@
 
                     <!-- Glyphicon to be placed inside button -->
                     <sm:icon name="glyphicon-globe" />
+
                     <!-- Animated load will replace the icon during the request -->
                     <sm:load />
                 </sm:button>
 
             </sm:rest>
 
-            <sm:panel id="rest-response" style="display: none; margin-top: 20px;">
-                <sm:header title="Rest response" />
+            <sm:panel id="rest-response" style="display: none; margin-top: 70px;">
+                <sm:header title="Rest response as JSON" />
                 <sm:panelbody id="rest-response-body">
                     <!-- The REST request response will be placed here -->
                 </sm:panelbody>
@@ -67,7 +68,7 @@
         <!-- Callback functions -->
         <script type="text/javascript">
             function requestOk(data, status, xhr) {
-                $('#rest-response-body').text(new XMLSerializer().serializeToString(data));
+                $('#rest-response-body').text(JSON.stringify(data, null, '\t'));
                 $('#rest-response').show();
             }
         </script>
