@@ -3,8 +3,8 @@ package ${package}.rest;
 import ${package}.adapter.Adapter;
 import ${package}.service.SpringService;
 
-import com.jsmart5.framework.annotation.RequestPath;
-import com.jsmart5.framework.manager.WebContext;
+import com.jsmartframework.web.annotation.RequestPath;
+import com.jsmartframework.web.manager.WebContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
