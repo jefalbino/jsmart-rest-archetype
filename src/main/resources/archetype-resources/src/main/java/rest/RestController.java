@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @Controller
-@RequestPath(path = "/home/v1/*")
+@RequestPath("/home/v1/*")
 public class RestController {
 
     @Autowired
